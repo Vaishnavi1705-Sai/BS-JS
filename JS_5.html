@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form Validation</title>
+    <style>.error { color: red; display: none; }</style>
+</head>
+<body>
+    <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><span class="error" id="nameError">This field is required</span><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><span class="error" id="emailError">A valid email address is required</span><br>
+        <label for="website">Website:</label>
+        <input type="text" id="website" name="website"><span class="error" id="websiteError">A valid URL is required</span><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><span class="error" id="messageError">This field is required</span><br>
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            const fields = ['name', 'email', 'website', 'message'];
+            let valid = true;
+            fields.forEach(function(field) {
+                const value = document.getElementById(field).value.trim();
+                const errorElement = document.getElementById(field + 'Error');
+                if (field === 'email') {
+                    if (!value.includes('@') || !value.includes('.')) {
+                        errorElement.style.display = 'inline'; valid = false;
+                    } else { errorElement.style.display = 'none'; }
+                } else if (field === 'website') {
+                    if (!value.startsWith('http')) {
+                        errorElement.style.display = 'inline'; valid = false;
+                    } else { errorElement.style.display = 'none'; }
+                } else {
+                    if (!value) {
+                        errorElement.style.display = 'inline'; valid = false;
+                    } else { errorElement.style.display = 'none'; }
+                }
+            });
+            if (!valid) event.preventDefault();
+        });
+    </script>
+</body>
+</html>

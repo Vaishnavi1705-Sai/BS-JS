@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <link rel="stylesheet" href="BS_6.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="example-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-message" id="name-error">Name is required</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error">Email is required</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <span class="error-message" id="password-error">Password is required</span>
+            </div>
+            <div class="form-group">
+                <label for="hobbies">Hobbies</label>
+                <select id="hobbies" name="hobbies">
+                    <option value="" disabled selected>Select your hobbies</option>
+                    <option value="reading">Reading</option>
+                    <option value="sports">Sports</option>
+                    <option value="traveling">Traveling</option>
+                    <option value="music">Music</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

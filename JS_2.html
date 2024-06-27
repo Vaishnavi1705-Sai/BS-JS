@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript task02</title>
+</head>
+<body>
+  
+
+    <script>
+        function Order(str) {
+    
+            var string=document.getElementById("string").value;
+        
+            document.getElementById("sol").innerHTML=string.split('').sort().join('');
+            ;
+    
+    
+}
+
+
+ let alph=Order("chandrika")
+     document.write(alph);
+    </script>
+    <h2 style="text-align: center; padding-top: 20px;">Ordering String</h2>
+    <div class="pt-5" style="padding-top:10px;padding-left:500px; ">
+        <label><b>Text to be ordered : </b></label>
+        <input type="text" placeholder="Enter the text to order" id="string"></input><br/><br/>
+        <button onclick="Order()" class="btn bg-secondary text-light">Sorting</button>
+        <p>The Sorted string :</p>
+        <span id="sol"></span>
+        </div>
+</body>
+</html>
